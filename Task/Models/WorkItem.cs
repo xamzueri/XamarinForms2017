@@ -4,7 +4,7 @@ using Xamarin.Forms;
 namespace Task.Models
 {
 
-    class WorkItem
+    public class WorkItem
     {
         public string Title
         {

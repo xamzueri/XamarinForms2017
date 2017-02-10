@@ -9,7 +9,7 @@ namespace Task
         {
             InitializeComponent();
 
-            MainPage = new TaskPage();
+            MainPage = new NavigationPage(new TaskPage());
         }
 
         protected override void OnStart()
