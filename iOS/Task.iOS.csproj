@@ -111,9 +111,15 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\XamarinZueri.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\XamarinZueri.imageset\XamarinZueri%401x.jpg" />
+    <ImageAsset Include="Assets.xcassets\XamarinZueri.imageset\XamarinZueri%402x.jpg" />
+    <ImageAsset Include="Assets.xcassets\XamarinZueri.imageset\XamarinZueri.jpg" />
+    <ImageAsset Include="Assets.xcassets\XamarinZueri.imageset\XamarinZueri.jpg.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\XamarinZueri.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
