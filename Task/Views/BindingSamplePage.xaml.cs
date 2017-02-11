@@ -10,6 +10,7 @@ namespace Task
         public BindingSamplePage()
         {
             InitializeComponent();
+            Image.Scale = 0.5;
         }
     }
 }

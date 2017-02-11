@@ -6,11 +6,23 @@
 				<RowDefinition Height="*" />
 				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
-			<Image Source="XamarinZueri" BindingContext="{x:Reference ScaleSlider}" Scale="{Binding Path=Value}" />
+			<Image x:Name="Image" Source="XamarinZueri" />
 			<StackLayout Grid.Row="1">
 				<StackLayout Orientation="Horizontal">
-					<Label Text="Scale:" VerticalOptions="Center" />
-					<Slider x:Name="ScaleSlider" Maximum="10.0" Value="10.0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+					<Label Text="{Binding Value, StringFormat='Scale ({0:F1}x):'}" BindingContext="{x:Reference ScaleSlider}" VerticalOptions="Center" />
+					<Slider x:Name="ScaleSlider" BindingContext="{x:Reference Image}" Value="{Binding Scale, Mode=TwoWay}" Maximum="10.0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Label BindingContext="{x:Reference RotationSlider}" Text="{Binding Value, StringFormat='Z Rotation ({0:F0}°):'}" VerticalOptions="Center" />
+					<Slider x:Name="RotationSlider" BindingContext="{x:Reference Image}" Value="{Binding Rotation, Mode=OneWayToSource}" Maximum="360" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Label BindingContext="{x:Reference XRotationSlider}" Text="{Binding Value, StringFormat='X Rotation ({0:F0}°):'}" VerticalOptions="Center" />
+					<Slider x:Name="XRotationSlider" BindingContext="{x:Reference Image}" Value="{Binding RotationX, Mode=OneWayToSource}" Maximum="360" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Label BindingContext="{x:Reference YRotationSlider}" Text="{Binding Value, StringFormat='Y Rotation ({0:F0}°):'}" VerticalOptions="Center" />
+					<Slider x:Name="YRotationSlider" BindingContext="{x:Reference Image}" Value="{Binding RotationY, Mode=OneWayToSource}" Maximum="360" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
 				</StackLayout>
 			</StackLayout>
 		</Grid>
