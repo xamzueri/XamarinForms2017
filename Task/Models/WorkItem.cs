@@ -18,7 +18,7 @@ namespace Task.Models
             set;
         }
 
-        public bool Done
+        public bool Completed
         {
             get;
             set;

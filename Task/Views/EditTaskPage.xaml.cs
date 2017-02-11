@@ -1,27 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using Task.Models;
+﻿using Task.Models;
 using Xamarin.Forms;
 
 namespace Task
 {
     public partial class EditTaskPage : ContentPage
     {
-        WorkItem selectedItem;
+        private WorkItem _selectedItem;
+        private EditTaskViewModel _vm;
+        private EditTaskViewModel Vm => _vm ?? (_vm = new EditTaskViewModel());
 
         public EditTaskPage()
         {
             InitializeComponent();
-            this.selectedItem = new WorkItem();
+            _selectedItem = new WorkItem();
+            Vm.NavigateBack = NavigateBack;
+            Vm.Init(_selectedItem);
+            BindingContext = Vm;
         }
 
         public EditTaskPage(WorkItem selectedItem):this()
         {
-            this.selectedItem = selectedItem;
+            _selectedItem = selectedItem;
+            Vm.Init(_selectedItem);
+            BindingContext = Vm;
             Title = selectedItem.Title;
         }
 
-        async void Handle_Clicked(object sender, System.EventArgs e)
+        async System.Threading.Tasks.Task NavigateBack()
         {
             await Navigation.PopAsync();
         }

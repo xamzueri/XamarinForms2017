@@ -7,18 +7,18 @@
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 			<StackLayout Margin="16">
-				<Entry Placeholder="Title" />
-				<Entry Placeholder="Description" />
+				<Entry Placeholder="Title" Text="{Binding Title, Mode=TwoWay}" />
+				<Entry Placeholder="Description" Text="{Binding Description, Mode=TwoWay}"/>
 				<Grid>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*" />
 						<ColumnDefinition Width="Auto" />
 					</Grid.ColumnDefinitions>
 					<Label Text="Task Completed" VerticalOptions="Center" />
-					<Switch HorizontalOptions="End" Grid.Column="1" />
+					<Switch HorizontalOptions="End" IsToggled="{Binding Completed, Mode=TwoWay}" Grid.Column="1" />
 				</Grid>
 			</StackLayout>
-			<Button Text="Save" Grid.Row="1" VerticalOptions="End" Margin="0,8" Clicked="Handle_Clicked" />
+			<Button Text="Save" Grid.Row="1" VerticalOptions="End" Margin="0,8" Command="{Binding StoreCommand}" />
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>
