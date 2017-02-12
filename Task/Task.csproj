@@ -35,6 +35,9 @@
     <EmbeddedResource Include="Views\BindingSamplePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Styles\BasicStyling.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -57,12 +60,16 @@
     <Compile Include="ViewModels\Helpers\GenericCommand.cs" />
     <Compile Include="ViewModels\TaskViewModel.cs" />
     <Compile Include="ViewModels\WorkItemViewModel.cs" />
+    <Compile Include="Styles\BasicStyling.xaml.cs">
+      <DependentUpon>BasicStyling.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Helpers\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

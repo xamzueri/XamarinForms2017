@@ -11,6 +11,7 @@ namespace Task.Views
         {
             BindingContext = Vm;
             InitializeComponent();
+            Vm.NavigateToTaskCreationPage = async () => await Navigation.PushAsync(new EditTaskPage());
         }
 
         static TaskViewModel _taskViewModel = new TaskViewModel();

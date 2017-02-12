@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Task.Styles.BasicStyling">
+	<Color x:Key="mainTextColor">Black</Color>
+	<Color x:Key="buttonTextColor">White</Color>
+	<Color x:Key="buttonBackgroundColor">Lime</Color>
+
+	<OnPlatform x:TypeArguments="Thickness" Android="16,0" iOS="-8,0" WinPhone="8,8" x:Key="ButtonMargin" />
+	
+	<Style TargetType="Button">
+		<Setter Property="BackgroundColor" Value="{StaticResource buttonBackgroundColor}" />
+		<Setter Property="TextColor" Value="{StaticResource buttonTextColor}" />
+		<Setter Property="Margin" Value="{StaticResource ButtonMargin}" />
+	</Style>
+</ResourceDictionary>
