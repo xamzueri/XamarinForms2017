@@ -9,7 +9,10 @@ namespace Task
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new TaskPage());
+            var navigationPage = new NavigationPage(new TaskPage());
+            navigationPage.BarBackgroundColor = Color.FromRgb(50, 150, 225);
+            navigationPage.BarTextColor = Color.White;
+            MainPage = navigationPage;
         }
 
         protected override void OnStart()
