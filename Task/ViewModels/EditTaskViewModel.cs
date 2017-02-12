@@ -1,36 +1,32 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Windows.Input;
 using Task.Models;
-using Xamarin.Forms;
+using Task.ViewModels.Helpers;
 
-namespace Task
+namespace Task.ViewModels
 {
-    public class EditTaskViewModel : INotifyPropertyChanged
+    public class EditTaskViewModel : BaseViewModel
     {
         bool _completed;
         String _description;
         String _title;
-        WorkItem _workItem;
+        WorkItemViewModel _workItem;
 
 
         public EditTaskViewModel()
         {
             NavigateBack = () => { return System.Threading.Tasks.Task.FromResult(string.Empty); };
+
+            StoreCommand = new Command(async () => await Save());
         }
 
-        public void Init(WorkItem workItem)
+        public void Init(WorkItemViewModel workItem)
         {
             if (workItem == null) throw new ArgumentNullException(nameof(workItem));
             _workItem = workItem;
             Title = _workItem.Title;
             Description = _workItem.Description;
             Completed = _workItem.Completed;
-
-            StoreCommand = new Command(async () => { await Save(); });
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public String Title
         {
@@ -87,15 +83,6 @@ namespace Task
             _workItem.Description = Description;
             _workItem.Completed = Completed;
             await NavigateBack();
-        }
-
-        private void RaisePropertyChanged(string name = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this,
-                    new PropertyChangedEventArgs(name));
-            }
         }
     }
 }
