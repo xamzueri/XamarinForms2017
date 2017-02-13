@@ -63,6 +63,7 @@
     <Compile Include="Styles\BasicStyling.xaml.cs">
       <DependentUpon>BasicStyling.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Converters\BooleanInversionConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -70,6 +71,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Helpers\" />
     <Folder Include="Styles\" />
+    <Folder Include="Views\Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

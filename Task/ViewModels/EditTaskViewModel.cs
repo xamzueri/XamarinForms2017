@@ -28,6 +28,14 @@ namespace Task.ViewModels
             Completed = _workItem.Completed;
         }
 
+        public bool IsValidTask
+        {
+            get
+            {
+                return string.IsNullOrWhiteSpace(Title);
+            }
+        }
+
         public String Title
         {
             get
@@ -40,6 +48,7 @@ namespace Task.ViewModels
                 if (value == _title) return;
                 _title = value;
                 RaisePropertyChanged(nameof(Title));
+                RaisePropertyChanged(nameof(IsValidTask));
             }
         }
 

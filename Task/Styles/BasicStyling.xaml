@@ -3,6 +3,7 @@
 	<Color x:Key="mainTextColor">Black</Color>
 	<Color x:Key="buttonTextColor">White</Color>
 	<Color x:Key="buttonBackgroundColor">Lime</Color>
+	<Color x:Key="buttonDisabledBackgroundColor">Silver</Color>
 
 	<OnPlatform x:TypeArguments="Thickness" Android="16,0" iOS="-8,0" WinPhone="8,8" x:Key="ButtonMargin" />
 	
