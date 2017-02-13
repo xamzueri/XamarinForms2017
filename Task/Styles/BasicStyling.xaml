@@ -7,7 +7,7 @@
 	<OnPlatform x:TypeArguments="Thickness" Android="16,0" iOS="-8,0" WinPhone="8,8" x:Key="ButtonMargin" />
 	
 	<Style TargetType="Button">
-		<Setter Property="BackgroundColor" Value="{StaticResource buttonBackgroundColor}" />
+		<Setter Property="BackgroundColor" Value="{DynamicResource buttonBackgroundColor}" />
 		<Setter Property="TextColor" Value="{StaticResource buttonTextColor}" />
 		<Setter Property="Margin" Value="{StaticResource ButtonMargin}" />
 	</Style>

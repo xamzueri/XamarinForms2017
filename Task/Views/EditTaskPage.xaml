@@ -17,6 +17,14 @@
 					<Label Text="Task Completed" VerticalOptions="Center" />
 					<Switch HorizontalOptions="End" IsToggled="{Binding Completed, Mode=TwoWay}" Grid.Column="1" />
 				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Label Text="Switch Button Theme" VerticalOptions="Center" />
+					<Switch HorizontalOptions="End" Toggled="Handle_Toggled" Grid.Column="1" />
+				</Grid>
 			</StackLayout>
 			<Button Text="Save" Grid.Row="1" VerticalOptions="End" Margin="-8,8" Command="{Binding StoreCommand}" />
 		</Grid>

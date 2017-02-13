@@ -19,7 +19,7 @@ namespace Task
             BindingContext = Vm;
         }
 
-        public EditTaskPage(WorkItemViewModel selectedItem):this()
+        public EditTaskPage(WorkItemViewModel selectedItem) : this()
         {
             _selectedItem = selectedItem;
             Vm.Init(_selectedItem);
@@ -30,6 +30,18 @@ namespace Task
         async System.Threading.Tasks.Task NavigateBack()
         {
             await Navigation.PopAsync();
+        }
+
+        void Handle_Toggled(object sender, Xamarin.Forms.ToggledEventArgs e)
+        {
+            if (e.Value)
+            {
+                Application.Current.Resources["buttonBackgroundColor"] = Color.Blue;
+            }
+            else
+            {
+                Application.Current.Resources["buttonBackgroundColor"] = Color.Lime;
+            }
         }
     }
 }
